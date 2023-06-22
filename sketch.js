@@ -20,12 +20,11 @@ let videoX,videoY;
 let ashish;
 let videoWidth;
 let videoHeight;
-let dummy;
 
 function setup() {                    // it will run single time
   videoWidth = windowWidth < 640 ? windowWidth : 640;
   videoHeight = windowHeight < 480 ? windowHeight : 480;  
-  dummy = windowWidth;
+  
     createCanvas(videoWidth,videoHeight);            //it will create canvas block of 800px  X  500px 
     background(255);
     capture = createCapture(VIDEO)     //it will initiate your camera to take your vdo
@@ -114,7 +113,7 @@ function calculateDistance(x1, y1, x2, y2) {
   }
 
 function draw() {  //it will run infinite times continuously
-    if(dummy!= windowWidth){  window.location.reload(); }
+   // if(dummy!= windowWidth){  window.location.reload(); }
     // images and videos(webcam)
    // Calculate the position to center the video
   videoX = (width - capture.width) / 2;
