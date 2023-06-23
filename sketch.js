@@ -24,7 +24,7 @@ let videoHeight;
 
 function setup() {                    // it will run single time
   let linewidth = document.getElementById("horizline").offsetWidth;
-  videoWidth = windowWidth < 640 ? linewidth : 640;
+  videoWidth = windowWidth < 640 ? 150 : 640;
   videoHeight = windowHeight < 480 ? windowHeight : 480;  
   
     createCanvas(videoWidth, videoHeight);            //it will create canvas block of 800px  X  500px 
