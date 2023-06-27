@@ -144,9 +144,10 @@ function captureImage(){
   videoX = (width - capture.width) / 2;
   videoY = (height - capture.height) / 2;
   
-// Draw the mirror video at the calculated position
+// Draw the video at the calculated position
+ if(windowWidth >500 || facingMod === 'user'){ // stop mirror for back camera in phones
     translate(width,0);
-    scale(-1,1);
+    scale(-1,1);}
     image(capture, videoX, videoY);      // show the vdo picture by picture in center of canvas
     fill(255,0,0);                       // WHITE COLOR FEELING IN CIRCLE
        
