@@ -145,7 +145,7 @@ function captureImage(){
   videoY = (height - capture.height) / 2;
   
 // Draw the video at the calculated position
- if(windowWidth >500 || facingMod === 'user'){ // stop mirror for back camera in phones
+ if(windowWidth >470 || facingMod === 'user'){ // stop mirror for back camera in phones
     translate(width,0);
     scale(-1,1);}
     image(capture, videoX, videoY);      // show the vdo picture by picture in center of canvas
