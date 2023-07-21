@@ -1,12 +1,7 @@
-<!-- ____________________javascript_________________ --> 
-<!-- p5.js -->
 <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script> 
-<!-- ml5js -->
 <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-<!-- loading sketch.js--> 
+<script src="https://cdn.jsdelivr.net/npm/gif.js/dist/gif.js"></script>
 <script src='sketch.js'></script>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,129 +12,135 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://i.ibb.co/6BTjX3C/icon.png">
-    <style>
-        *{   
-            margin: 0;
-            padding: 0;
-            color: azure;           
-         }
-        
-        body{
-            overflow-x: hidden !important;
-            color: azure;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* justify-content: center; */
-            height: 100vh;
-            margin: 0; 
-            background-color: rgb(7, 5, 5);
-        } 
-        .filter{
-            margin: 5px;
-            margin-top: 20px;
-            border-radius: 10px;
-            background-color: antiquewhite;
-            height: 150px;
-            width:auto;
-        } 
-        .filter:hover{
-            background-color: rgb(194, 84, 84);
-        }
-        canvas{
-          margin: 0;
-          border-radius: 15px !important;
-          margin-bottom: 10px;
-       }
-       .buttonbox{
-        width: 100%;
-        display: flex;
-        justify-content:center;
-       }
-       .flip , .clicktopic ,.dummybutton{
-        color: red;
-        background-color: azure;
-        width:60px;
-        height: 60px;
-        border-radius: 30px;
-        border: 1.5px solid red;
-        transition: background-color 0.7s ease;
-        margin-bottom: 20px;
-       }
-       .dummybutton:hover{
-        background-color: rgb(255, 196, 0);
-       }
-       .clicktopic:hover{
-        background-color: rgb(255, 196, 0);
-       }
-       .flip:hover{
-        background-color: rgb(255, 196, 0);
-       }
-       .linkedin{
-        border: 1px solid white ;
-        border-radius: 5px;
-        padding: 3px;
-       }
-       #linkedinlogo{
-        border-radius: 2px;
-        padding: 2.5px;
-        background-color: blue;
-       }
-       #rotatecamlogo , #downloadlogo{
-        color:rgb(42, 97, 165);
-        font-size: 25px;
-       }
-       @media screen and (max-width: 470px) { canvas{ border-radius: 0px !important; margin-bottom: 20px; }}
-       
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body >
 <div class="container">
-    <h1>Choose a Filter</h1>
-    <a href="#defaultCanvas0"><img src="images/filter1.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/filter2.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/filter3.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/filter4.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/filter5.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/glass1.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/glass2.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/glass3.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/glass4.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/glass5.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/shahrukh.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/cigar.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/spects.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass6.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass7.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass8.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass9.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass10.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zdog.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zdemon1.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zdemon2.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zdemon4.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass11.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass12.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass13.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass14.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass15.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass16.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass18.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zfilter7.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zfilter8.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass19.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass20.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass21.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass22.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zmask1.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zrabit.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zjoker.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass23.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zeye.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zeye1.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zdogfil.png" alt="filter" class="filter"></a>
-    <a href="#defaultCanvas0"><img src="images/zglass16.png" alt="filter" class="filter"></a>
-    
+    <a href="#choose" class="back">^</a>
+    <h1 id="choose">Choose a Filter</h1>
+    <a href="#defaultCanvas0"><img src="nose/filter1.png"   alt="filter" class="filter"id="nose/filter1.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/filter2.png"   alt="filter" class="filter"id="nose/filter2.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/filter3.png"   alt="filter" class="filter"id="nose/filter3.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/filter4.png"   alt="filter" class="filter"id="nose/filter4.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/filter5.png"   alt="filter" class="filter"id="nose/filter5.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/glass1.png"    alt="filter" class="filter"id="nose/glass1.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/glass2.png"    alt="filter" class="filter"id="nose/glass2.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/glass3.png"    alt="filter" class="filter"id="nose/glass3.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/glass4.png"    alt="filter" class="filter"id="nose/glass4.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/glass5.png"    alt="filter" class="filter"id="nose/glass5.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/shahrukh.png"  alt="filter" class="filter"id="nose/shahrukh.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/cigar.png"     alt="filter" class="filter"id="nose/cigar.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/spects.png"    alt="filter" class="filter"id="nose/spects.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass6.png"   alt="filter" class="filter"id="nose/zglass6.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass7.png"   alt="filter" class="filter"id="nose/zglass7.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass8.png"   alt="filter" class="filter"id="nose/zglass8.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass9.png"   alt="filter" class="filter"id="nose/zglass9.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass10.png"  alt="filter" class="filter"id="nose/zglass10.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zdog.png"      alt="filter" class="filter"id="nose/zdog.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/zdemon1.png"   alt="filter" class="filter"id="eyes/zdemon1.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zdemon2.png"   alt="filter" class="filter"id="nose/zdemon2.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/zdemon4.png"   alt="filter" class="filter"id="eyes/zdemon4.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass11.png"  alt="filter" class="filter"id="nose/zglass11.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass12.png"  alt="filter" class="filter"id="nose/zglass12.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass13.png"  alt="filter" class="filter"id="nose/zglass13.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass14.png"  alt="filter" class="filter"id="nose/zglass14.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass15.png"  alt="filter" class="filter"id="nose/zglass15.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass16.png"  alt="filter" class="filter"id="nose/zglass16.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass18.png"  alt="filter" class="filter"id="nose/zglass18.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zfilter7.png"  alt="filter" class="filter"id="nose/zfilter7.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zfilter8.png"  alt="filter" class="filter"id="nose/zfilter8.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass19.png"  alt="filter" class="filter"id="nose/zglass19.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass20.png"  alt="filter" class="filter"id="nose/zglass20.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass21.png"  alt="filter" class="filter"id="nose/zglass21.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass22.png"  alt="filter" class="filter"id="nose/zglass22.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zmask1.png"    alt="filter" class="filter"id="nose/zmask1.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zrabit.png"    alt="filter" class="filter"id="nose/zrabit.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zjoker.png"    alt="filter" class="filter"id="nose/zjoker.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass23.png"  alt="filter" class="filter"id="nose/zglass23.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zeye.png"      alt="filter" class="filter"id="nose/zeye.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zeye1.png"     alt="filter" class="filter"id="nose/zeye1.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zdogfil.png"   alt="filter" class="filter"id="nose/zdogfil.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/zglass16.png"  alt="filter" class="filter"id="nose/zglass16.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/mustache1.png" alt="filter" class="filter"id="nose/mustache1.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/mustache2.png" alt="filter" class="filter"id="nose/mustache2.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/mustache3.png" alt="filter" class="filter"id="nose/mustache3.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/mustache4.png" alt="filter" class="filter"id="nose/mustache4.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/mustache5.png" alt="filter" class="filter"id="nose/mustache5.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/mustache6.png" alt="filter" class="filter"id="nose/mustache6.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/mustache7.png" alt="filter" class="filter"id="nose/mustache7.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/chashma.png"   alt="filter" class="filter"id="nose/chashma.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/neck1.png"     alt="filter" class="filter"id="nose/neck1.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/jokerrr1.png"  alt="filter" class="filter"id="nose/jokerrr1.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/jokerrr2.png"  alt="filter" class="filter"id="nose/jokerrr2.png"></a>
+    <a href="#defaultCanvas0"><img src="nose/chashma1.png"  alt="filter" class="filter"id="nose/chashma1.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask1.png"     alt="filter" class="filter"id="eyes/mask1.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask2.png"     alt="filter" class="filter"id="eyes/mask2.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask3.png"     alt="filter" class="filter"id="eyes/mask3.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask4.png"     alt="filter" class="filter"id="eyes/mask4.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask5.png"     alt="filter" class="filter"id="eyes/mask5.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask6.png"     alt="filter" class="filter"id="eyes/mask6.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask7.png"     alt="filter" class="filter"id="eyes/mask7.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask8.png"     alt="filter" class="filter"id="eyes/mask8.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask9.png"     alt="filter" class="filter"id="eyes/mask9.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask10.png"    alt="filter" class="filter"id="eyes/mask10.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask11.png"    alt="filter" class="filter"id="eyes/mask11.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask12.png"    alt="filter" class="filter"id="eyes/mask12.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask13.png"    alt="filter" class="filter"id="eyes/mask13.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask14.png"    alt="filter" class="filter"id="eyes/mask14.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask15.png"    alt="filter" class="filter"id="eyes/mask15.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask16.png"    alt="filter" class="filter"id="eyes/mask16.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask17.png"    alt="filter" class="filter"id="eyes/mask17.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask18.png"    alt="filter" class="filter"id="eyes/mask18.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask19.png"    alt="filter" class="filter"id="eyes/mask19.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask20.png"    alt="filter" class="filter"id="eyes/mask20.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask21.png"    alt="filter" class="filter"id="eyes/mask21.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask22.png"    alt="filter" class="filter"id="eyes/mask22.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask23.png"    alt="filter" class="filter"id="eyes/mask23.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask24.png"    alt="filter" class="filter"id="eyes/mask24.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask25.png"    alt="filter" class="filter"id="eyes/mask25.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask26.png"    alt="filter" class="filter"id="eyes/mask26.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/mask27.png"    alt="filter" class="filter"id="eyes/mask27.png"></a>
+    <a href="#defaultCanvas0"><img src="eyes/doggy.gif"     alt="filter" class="filter"id="eyes/doggy.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/scary1.gif"    alt="filter" class="filter"id="eyes/scary1.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/scary2.gif"    alt="filter" class="filter"id="eyes/scary2.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/scary3.gif"    alt="filter" class="filter"id="eyes/scary3.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/scary4.gif"    alt="filter" class="filter"id="eyes/scary4.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/scary5.gif"    alt="filter" class="filter"id="eyes/scary5.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/scary6.gif"    alt="filter" class="filter"id="eyes/scary6.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/scary7.gif"    alt="filter" class="filter"id="eyes/scary7.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/scary8.png"    alt="filter" class="filter"id="eyes/scary8.png"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/scary9.gif"    alt="filter" class="filter"id="eyes/scary9.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/emoji1.gif"    alt="filter" class="filter"id="eyes/emoji1.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji2.gif"    alt="filter" class="filter"id="eyes/emoji2.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji3.gif"    alt="filter" class="filter"id="eyes/emoji3.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji4.gif"    alt="filter" class="filter"id="eyes/emoji4.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji5.gif"    alt="filter" class="filter"id="eyes/emoji5.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji6.gif"    alt="filter" class="filter"id="eyes/emoji6.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/emoji7.gif"    alt="filter" class="filter"id="eyes/emoji7.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji8.gif"    alt="filter" class="filter"id="eyes/emoji8.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji9.gif"    alt="filter" class="filter"id="eyes/emoji9.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji10.gif"   alt="filter" class="filter"id="eyes/emoji10.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji11.gif"   alt="filter" class="filter"id="eyes/emoji11.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji12.gif"   alt="filter" class="filter"id="eyes/emoji12.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji13.gif"   alt="filter" class="filter"id="eyes/emoji13.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji14.gif"   alt="filter" class="filter"id="eyes/emoji14.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji15.gif"   alt="filter" class="filter"id="eyes/emoji15.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji16.gif"   alt="filter" class="filter"id="eyes/emoji16.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji17.gif"   alt="filter" class="filter"id="eyes/emoji17.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji18.gif"   alt="filter" class="filter"id="eyes/emoji18.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/scary10.gif"   alt="filter" class="filter"id="eyes/scary10.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/scary11.gif"   alt="filter" class="filter"id="eyes/scary11.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/scary12.gif"   alt="filter" class="filter"id="eyes/scary12.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/scary13.gif"   alt="filter" class="filter"id="eyes/scary13.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/scary14.gif"   alt="filter" class="filter"id="eyes/scary14.gif"></a> 
+    <a href="#defaultCanvas0"><img src="eyes/scary15.gif"   alt="filter" class="filter"id="eyes/scary15.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji19.gif"   alt="filter" class="filter"id="eyes/emoji19.gif"></a>
+    <a href="#defaultCanvas0"><img src="eyes/emoji20.gif"   alt="filter" class="filter"id="eyes/emoji20.gif"></a>
+    <div>
+      <input class="tint" type="range" min="0" max="255" value="200">
+      <input class="tint" type="range" min="0" max="255" value="200">
+      <input class="tint" type="range" min="0" max="255" value="200">
+    </div>
 <hr>
 </div>
 <h2 id="greet">Finding...</h2>
