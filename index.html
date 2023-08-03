@@ -13,9 +13,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://i.ibb.co/6BTjX3C/icon.png">
     <link rel="stylesheet" href="style.css">
+    <script>
+      window.addEventListener('load', () => {
+        document.querySelector('.preloading').style.display="none";
+        document.querySelector('.container').style.display="block";
+        document.getElementById("greet").style.display="block";
+        });
+    </script>
 </head>
 <body >
-<div class="container">
+<div class="preloading"></div>
+<div class="container" style="display: none;">
     <a href="#choose" class="back">^</a>
     <h1 id="choose">Choose a Filter</h1>
     <a href="#defaultCanvas0"><img src="nose/filter1.png"   alt="filter" class="filter"id="nose/filter1.png"></a>
@@ -143,6 +151,6 @@
     </div>
 <hr>
 </div>
-<h2 id="greet">Finding...</h2>
+<h2 id="greet" style="display: none;">Finding...</h2>
 </body>
 </html>
